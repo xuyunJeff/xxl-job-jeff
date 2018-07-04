@@ -16,8 +16,6 @@ xxl:
 
 
 server:
-  rootPath: /
-  staticPath: /
   servlet:
     context-path: /
 
@@ -49,7 +47,7 @@ spring:
 #            max-request-size: 100MB
 #            enabled: true
     resources: # 指定静态资源的路径
-        static-locations: classpath:/static/,classpath:/templates/,classpath:/META-INF/resources/,classpath:/META-INF/resources/webjars/
+        static-locations: classpath:/static/,classpath:/templates/,classpath:/META-INF/resources/,classpath:/META-INF/resources/webjars/,classpath:/webapp/,classpath:/
 #    cache:
 #      type: redis
 #    redis:
@@ -63,10 +61,16 @@ spring:
 #            max-idle: 10      # 连接池中的最大空闲连接
 #            min-idle: 5       # 连接池中的最小空闲连接
     datasource:
-        url: jdbc:mysql://192.168.5.30:3306/xxl_job?useUnicode=true&characterEncoding=UTF-8
+        url: jdbc:mysql://192.168.5.30:3306/xxl_job?useUnicode=true&characterEncoding=utf-8&useSSL=false
         password: zhonglixuntaqianbaidu
         username: root
         driver-class-name: com.mysql.jdbc.Driver
+        tomcat:
+          initial-size: 1
+          max-active: 5
+          max-wait: 1000
+          min-idle: 1
+          max-idle: 4
     #mail:
       #default-encoding: UTF-8
       #host: smtp.gmail.com

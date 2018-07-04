@@ -4,7 +4,7 @@
   	<#import "../common/common.macro.ftl" as netCommon>
 	<@netCommon.commonStyle />
 	<!-- DataTables -->
-  	<link rel="stylesheet" href="${request.contextPath}/webapp/static/adminlte/plugins/datatables/dataTables.bootstrap.css">
+  	<link rel="stylesheet" href="/webapp/static/adminlte/plugins/datatables/dataTables.bootstrap.css">
     <title>${I18n.admin_name}</title>
 </head>
 <body class="hold-transition skin-blue sidebar-mini <#if cookieMap?exists && "off" == cookieMap["xxljob_adminlte_settings"].value >sidebar-collapse</#if> ">
@@ -192,10 +192,10 @@
 
 <@netCommon.commonScript />
 <!-- DataTables -->
-<script src="${request.contextPath}/webapp/static/adminlte/plugins/datatables/jquery.dataTables.min.js"></script>
-<script src="${request.contextPath}/webapp/static/adminlte/plugins/datatables/dataTables.bootstrap.min.js"></script>
+<script src="/webapp/static/adminlte/plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="/webapp/static/adminlte/plugins/datatables/dataTables.bootstrap.min.js"></script>
 <#-- jquery.validate -->
-<script src="${request.contextPath}/webapp/static/plugins/jquery/jquery.validate.min.js"></script>
-<script src="${request.contextPath}/webapp/static/js/jobgroup.index.1.js"></script>
+<script src="/webapp/static/plugins/jquery/jquery.validate.min.js"></script>
+<script src="/webapp/static/js/jobgroup.index.1.js"></script>
 </body>
 </html>

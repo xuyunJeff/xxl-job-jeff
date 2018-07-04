@@ -37,28 +37,28 @@
 
 <#macro commonScript>
 	<!-- jQuery 2.1.4 -->
-	<script src="${request.contextPath}/webapp/static/adminlte/plugins/jQuery/jquery-2.2.3.min.js"></script>
+	<script src="/webapp/static/adminlte/plugins/jQuery/jquery-2.2.3.min.js"></script>
 	<!-- Bootstrap 3.3.5 -->
-	<script src="${request.contextPath}/webapp/static/adminlte/bootstrap/js/bootstrap.min.js"></script>
+	<script src="/webapp/static/adminlte/bootstrap/js/bootstrap.min.js"></script>
 	<!-- FastClick -->
-	<script src="${request.contextPath}/webapp/static/adminlte/plugins/fastclick/fastclick.min.js"></script>
+	<script src="/webapp/static/adminlte/plugins/fastclick/fastclick.min.js"></script>
 	<!-- AdminLTE App -->
-	<script src="${request.contextPath}/webapp/static/adminlte/dist/js/app.min.js"></script>
+	<script src="/webapp/static/adminlte/dist/js/app.min.js"></script>
 	<#-- jquery.slimscroll -->
-	<script src="${request.contextPath}/webapp/static/adminlte/plugins/slimScroll/jquery.slimscroll.min.js"></script>
+	<script src="/webapp/static/adminlte/plugins/slimScroll/jquery.slimscroll.min.js"></script>
 
     <!-- pace -->
-    <script src="${request.contextPath}/webapp/static/plugins/pace/pace.min.js"></script>
+    <script src="/webapp/static/plugins/pace/pace.min.js"></script>
     <#-- jquery cookie -->
-	<script src="${request.contextPath}/webapp/static/plugins/jquery/jquery.cookie.js"></script>
+	<script src="/webapp/static/plugins/jquery/jquery.cookie.js"></script>
 
 	<#-- layer -->
-	<script src="${request.contextPath}/webapp/static/plugins/layer/layer.js"></script>
+	<script src="/webapp/static/plugins/layer/layer.js"></script>
 
 	<#-- common -->
-    <script src="${request.contextPath}/webapp/static/js/common.1.js"></script>
+    <script src="/webapp/static/js/common.1.js"></script>
     <script>
-		var base_url = '${request.contextPath}';
+		var base_url = '';
         var I18n = ${I18nUtil.getMultString()};
         console.log(I18n)
 	</script>
@@ -67,7 +67,7 @@
 
 <#macro commonHeader>
 	<header class="main-header">
-		<a href="${request.contextPath}/" class="logo">
+		<a href="/" class="logo">
 			<span class="logo-mini"><b>XXL</b></span>
 			<span class="logo-lg"><b>${I18n.admin_name}</b></span>
 		</a>
@@ -94,10 +94,10 @@
 			<!-- sidebar menu: : style can be found in sidebar.less -->
 			<ul class="sidebar-menu">
                 <li class="header">${I18n.system_nav}</li>
-				<li class="nav-click <#if pageName == "jobinfo">active</#if>" ><a href="${request.contextPath}/jobinfo"><i class="fa fa-circle-o text-aqua"></i><span>${I18n.jobinfo_name}</span></a></li>
-				<li class="nav-click <#if pageName == "joblog">active</#if>" ><a href="${request.contextPath}/joblog"><i class="fa fa-circle-o text-yellow"></i><span>${I18n.joblog_name}</span></a></li>
-                <li class="nav-click <#if pageName == "jobgroup">active</#if>" ><a href="${request.contextPath}/jobgroup"><i class="fa fa-circle-o text-green"></i><span>${I18n.jobgroup_name}</span></a></li>
-				<li class="nav-click <#if pageName == "help">active</#if>" ><a href="${request.contextPath}/help"><i class="fa fa-circle-o text-gray"></i><span>${I18n.job_help}</span></a></li>
+				<li class="nav-click <#if pageName == "jobinfo">active</#if>" ><a href="/jobinfo"><i class="fa fa-circle-o text-aqua"></i><span>${I18n.jobinfo_name}</span></a></li>
+				<li class="nav-click <#if pageName == "joblog">active</#if>" ><a href="/joblog"><i class="fa fa-circle-o text-yellow"></i><span>${I18n.joblog_name}</span></a></li>
+                <li class="nav-click <#if pageName == "jobgroup">active</#if>" ><a href="/jobgroup"><i class="fa fa-circle-o text-green"></i><span>${I18n.jobgroup_name}</span></a></li>
+				<li class="nav-click <#if pageName == "help">active</#if>" ><a href="/help"><i class="fa fa-circle-o text-gray"></i><span>${I18n.job_help}</span></a></li>
 			</ul>
 		</section>
 		<!-- /.sidebar -->
