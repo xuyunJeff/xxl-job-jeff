@@ -34,11 +34,9 @@ public class IndexController {
 
 	@RequestMapping("/")
 	public String index(Model model) {
-
 		Map<String, Object> dashboardMap = xxlJobService.dashboardInfo();
 		model.addAllAttributes(dashboardMap);
-
-		return "index";
+		return "/WEB-INF/template/index";
 	}
 
     @RequestMapping("/chartInfo")
@@ -65,13 +63,11 @@ public class IndexController {
 		if (PermissionInterceptor.ifLogin(request)) {
 			return ReturnT.SUCCESS;
 		}
-
 		// param
 		if (StringUtils.isBlank(userName) || StringUtils.isBlank(password)){
 			return new ReturnT<String>(500, I18nUtil.getString("login_param_empty"));
 		}
 		boolean ifRem = (StringUtils.isNotBlank(ifRemember) && "on".equals(ifRemember))?true:false;
-
 		// do login
 		boolean loginRet = PermissionInterceptor.login(response, userName, password, ifRem);
 		if (!loginRet) {
@@ -92,11 +88,6 @@ public class IndexController {
 	
 	@RequestMapping("/help")
 	public String help() {
-
-		/*if (!PermissionInterceptor.ifLogin(request)) {
-			return "redirect:/toLogin";
-		}*/
-
 		return "help";
 	}
 

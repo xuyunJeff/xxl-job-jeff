@@ -1,15 +1,45 @@
+### xxl-job email
+xxl:
+  job:
+    mail:
+      host: smtp.163.com
+      port: 25
+      ssl: false
+      username: ovono802302@163.com
+      password: asdfzxcv
+      sendNick: 《任务调度平台XXL-JOB》
+    login:
+      username: admin
+      password: 123456
+    i18n:
+    accessToken:
+
+
 server:
   rootPath: /
   staticPath: /
-#  context-path: /
+  servlet:
+    context-path: /
+
 
 spring:
+    freemarker:
+#      check-template-location: false
+      prefix:
+      suffix: .ftl
+      content-type: text/html;charset=UTF-8
+      expose-request-attributes: true
+      expose-session-attributes: true
+      request-context-attribute: request
+      expose-spring-macro-helpers: true
+      cache: true
+      template-loader-path: classpath:/webapp
     profiles:
         active: env
     thymeleaf:
         cache: false
         mode: LEGACYHTML5
-        prefix: classpath:/WEB-INF/templates
+        prefix: classpath:/
     # jackson时间格式化
     jackson:
         date-format: yyyy-MM-dd HH:mm:ss
@@ -32,36 +62,11 @@ spring:
 #            max-wait: -1      # 连接池最大阻塞等待时间（使用负值表示没有限制）
 #            max-idle: 10      # 连接池中的最大空闲连接
 #            min-idle: 5       # 连接池中的最小空闲连接
-#    datasource:
-#        type: com.alibaba.druid.pool.DruidDataSource
-#        driverClassName: com.mysql.jdbc.Driver
-#        druid:
-#            initial-size: 10
-#            max-active: 100
-#            min-idle: 10
-#            max-wait: 60000
-#            pool-prepared-statements: true
-#            max-pool-prepared-statement-per-connection-size: 20
-#            time-between-eviction-runs-millis: 60000
-#            min-evictable-idle-time-millis: 300000
-#            validation-query: SELECT 1 FROM DUAL
-#            test-while-idle: true
-#            test-on-borrow: false
-#            test-on-return: false
-#            stat-view-servlet:
-#                enabled: true
-#                url-pattern: /druid/*
-#            filter:
-#                stat:
-#                    log-slow-sql: true
-#                    slow-sql-millis: 1000
-#                    merge-sql: true
-#                wall:
-#                    config:
-#                        multi-statement-allow: true
-#        url: jdbc:mysql://192.168.5.30:3306/xxl-job?useUnicode=true&characterEncoding=UTF-8
-#        password: zhonglixundaqianbaidu
-#        username: root
+    datasource:
+        url: jdbc:mysql://192.168.5.30:3306/xxl_job?useUnicode=true&characterEncoding=UTF-8
+        password: zhonglixuntaqianbaidu
+        username: root
+        driver-class-name: com.mysql.jdbc.Driver
     #mail:
       #default-encoding: UTF-8
       #host: smtp.gmail.com
